@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import { Logo } from '../../icons/Logo';
+import { Map } from '../../icons/Map';
+import { Alarm } from '../../icons/Alarm';
+import { Appointment } from '../../icons/Appointment';
+import { Notification } from '../../icons/Notification';
+import { Setting } from '../../icons/Setting';
 
 export default function Nav() {
     return (
@@ -8,18 +13,23 @@ export default function Nav() {
                 <Logo />
                 <NavLeftUl>
                     <li>
+                        <Map />
                         <p>Map</p>
                     </li>
                     <li>
+                        <Alarm />
                         <p>Alarm</p>
                     </li>
                     <li>
+                        <Appointment />
                         <p>Appointment</p>
                     </li>
                     <li>
+                        <Notification />
                         <p>Notification</p>
                     </li>
                     <li>
+                        <Setting />
                         <p>Setting</p>
                     </li>
                 </NavLeftUl>
