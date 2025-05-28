@@ -1,0 +1,28 @@
+# 빌드 결과물
+build
+dist
+out
+
+# 의존성
+node_modules
+
+# 캐시
+.cache
+.next
+
+# 환경 설정 파일
+.env
+.env.*
+
+# 기타
+.DS_Store
+*.log
+coverage
+.vercel
+.turbo
+
+# 특정 파일
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
