@@ -1,14 +1,7 @@
 import type { IconProps } from './types';
 
 export const LeftArrow = ({ width = 18, height = 34, color = 'white', className }: IconProps) => (
-  <svg
-    width={width}
-    height={height}
-    viewBox="0 0 18 34"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
+  <svg width={width} height={height} viewBox="0 0 18 34" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

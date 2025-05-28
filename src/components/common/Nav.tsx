@@ -1,3 +1,6 @@
+// FIXME: 네비게이션 바가 75%가 돼야 함. 반응형이 안 돼잇어서 일단 임시로 크롬 75%를 기준으로 개발
+// ㅈㅅ
+
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,11 +10,16 @@ import { Alarm } from '../../icons/Alarm';
 import { Appointment } from '../../icons/Appointment';
 import { Notification } from '../../icons/Notification';
 import { Setting } from '../../icons/Setting';
+import { LeftArrow } from '../../icons/LeftArrow';
 
 interface NavItem {
   icon: React.ReactNode;
   label: string;
   path: string;
+}
+
+interface NavProps {
+  Left?: 'logo' | 'arrow';
 }
 
 const navItems: NavItem[] = [
@@ -22,13 +30,16 @@ const navItems: NavItem[] = [
   { icon: <Setting />, label: 'Setting', path: '/setting' },
 ];
 
-export default function Nav() {
+export default function Nav({ Left = 'logo' }: NavProps) {
   const location = useLocation();
 
   return (
     <NavContainer>
       <NavContent>
-        <Logo />
+        <LeftBox>
+          {Left === 'logo' && <Logo />}
+          {Left === 'arrow' && <LeftArrow />}
+        </LeftBox>
         <NavList>
           {navItems.map(({ icon, label, path }) => (
             <NavItem key={path} $isActive={location.pathname === path}>
@@ -46,21 +57,12 @@ export default function Nav() {
 
 const NavContainer = styled.nav`
   width: 100%;
-  height: 75px;
+  height: 100px;
   background-color: var(--color-background);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  padding: 0 60px;
-
-  @media (max-width: 1200px) {
-    height: 60px;
-    padding: 0 32px;
-  }
-  @media (max-width: 768px) {
-    height: 48px;
-    padding: 0 8px;
-  }
+  padding: 0 80px;
 `;
 
 const NavContent = styled.div`
@@ -68,14 +70,13 @@ const NavContent = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 75px;
+  height: 100px;
+`;
 
-  @media (max-width: 1200px) {
-    height: 60px;
-  }
-  @media (max-width: 768px) {
-    height: 48px;
-  }
+const LeftBox = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
 `;
 
 const NavList = styled.ul`
@@ -84,36 +85,18 @@ const NavList = styled.ul`
   gap: 20px;
   margin: 0;
   padding: 0;
-  height: 75px;
-
-  @media (max-width: 1200px) {
-    gap: 12px;
-    height: 60px;
-  }
-  @media (max-width: 768px) {
-    gap: 8px;
-    height: 48px;
-  }
+  height: 100px;
 `;
 
 const NavItem = styled.li<{ $isActive: boolean }>`
   display: flex;
   align-items: center;
   color: ${({ $isActive }) => ($isActive ? 'var(--color-primary)' : 'var(--color-text)')};
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-family: 'HakgyoansimWoojuR', 'Pretendard', sans-serif;
   font-weight: 400;
-  height: 75px;
+  height: 100px;
   line-height: 1;
-
-  @media (max-width: 1200px) {
-    font-size: 1rem;
-    height: 60px;
-  }
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-    height: 48px;
-  }
 `;
 
 const NavLink = styled(Link)`
@@ -122,16 +105,7 @@ const NavLink = styled(Link)`
   gap: 10px;
   text-decoration: none;
   color: inherit;
-  height: 75px;
-
-  @media (max-width: 1200px) {
-    gap: 8px;
-    height: 60px;
-  }
-  @media (max-width: 768px) {
-    gap: 6px;
-    height: 48px;
-  }
+  height: 100px;
 
   span {
     display: flex;
@@ -144,15 +118,7 @@ const NavLink = styled(Link)`
   }
 
   svg {
-    width: 24px;
-    height: 24px;
-    @media (max-width: 1200px) {
-      width: 20px;
-      height: 20px;
-    }
-    @media (max-width: 768px) {
-      width: 16px;
-      height: 16px;
-    }
+    width: 30px;
+    height: 30px;
   }
 `;

@@ -1,14 +1,7 @@
 import type { IconProps } from './types';
 
 export const Appointment = ({ width = 30, height = 30, color = 'white', className }: IconProps) => (
-  <svg
-    width={width}
-    height={height}
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
+  <svg width={width} height={height} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path
       d="M15 29.0015C7.52075 29.0015 1.30371 22.7844 1.30371 15.3052C1.30371 7.8125 7.50732 1.60889 14.9866 1.60889C22.4792 1.60889 28.6963 7.8125 28.6963 15.3052C28.6963 22.7844 22.4927 29.0015 15 29.0015ZM7.97729 16.7554H14.9866C15.5103 16.7554 15.9265 16.3525 15.9265 15.8154V6.76514C15.9265 6.24146 15.5103 5.83862 14.9866 5.83862C14.4629 5.83862 14.0601 6.24146 14.0601 6.76514V14.8889H7.97729C7.44019 14.8889 7.03735 15.2917 7.03735 15.8154C7.03735 16.3525 7.44019 16.7554 7.97729 16.7554Z"
       fill={color}
