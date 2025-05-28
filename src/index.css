@@ -1,7 +1,8 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 :root {
-  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  --font-primary:
+    'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
   --font-secondary: 'Hakgyoansim Wooju', 'Comic Sans MS', cursive;
 
   font-family: var(--font-primary);
